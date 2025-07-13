@@ -1,0 +1,39 @@
+###recuperar peliculas
+GET http://localhost:1234/movies
+
+###recuperar peliculas por id
+GET http://localhost:1234/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
+
+###recuperar peliculas por el genero
+                                ###query params
+GET http://localhost:1234/movies?genre=action
+
+###crear una pelicula
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+#cons post se crea un nuevo elemento
+{
+    "title": "Avatar",
+    "year": 2009,
+    "director": "James Cameron",
+    "duration": 162,
+    "poster": "https://i.etsystatic.com/35681979/r/il/dfe3ba/3957859451/il_fullxfull.3957859451_h27r.jpg",
+    "genre": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+        ],
+    "rate": 7.8,
+    "sql":"ufhbieefb"
+}
+
+# con PATCH se modifica/actualiza una parte del elemento ya creado
+###actualizar una pelicula 
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+    "title":"hola mundo",
+    "year": 1960
+}
