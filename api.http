@@ -28,6 +28,10 @@ Content-Type: application/json
     "sql":"ufhbieefb"
 }
 
+###Borrar peli
+DELETE http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+
 # con PATCH se modifica/actualiza una parte del elemento ya creado
 ###actualizar una pelicula 
 PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3

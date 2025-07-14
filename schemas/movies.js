@@ -1,4 +1,4 @@
-const z = require('zod')
+import z from 'zod'
 
 const moviesShema = z.object({
   title: z.string({
@@ -21,15 +21,10 @@ const moviesShema = z.object({
   rate: z.number().max(10).default(5)
 })
 
-const valiDateMovie = (object) => {
+export const valiDateMovie = (object) => {
   return moviesShema.safeParse(object)
 }
 
-const validDateParcialMovie = (object) => {
+export const validDateParcialMovie = (object) => {
   return moviesShema.partial().safeParse(object)
-}
-
-module.exports = {
-  valiDateMovie,
-  validDateParcialMovie
 }
